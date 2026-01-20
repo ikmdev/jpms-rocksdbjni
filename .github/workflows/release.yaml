@@ -30,8 +30,8 @@ jobs:
 
       - name: Verify Version
         run: |
-            CURRENT_VERSION=$(./mvnw help:evaluate -D'expression=project.version' -q -D'forceStdout')
-            CORE_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.version' -q -D'forceStdout')
+            CURRENT_VERSION=$(./mvnw help:evaluate -D'expression=project.version' -q -D'forceStdout' | sed 's/.* //')
+            CORE_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.version' -q -D'forceStdout' | sed 's/.* //')
             if [[ "$CURRENT_VERSION" != *"$CORE_VERSION"* ]]; then
                echo "::error::Current Version Does Not Match Core Version"
                echo "::error::Current Version: $CURRENT_VERSION"
@@ -42,8 +42,8 @@ jobs:
       - name: Extrapolate IKM Release Property
         id: newDevVersion
         run: |
-          CORE_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.version' -q -D'forceStdout')
-          RC_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.release' -q -D'forceStdout')
+          CORE_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.version' -q -D'forceStdout' | sed 's/.* //')
+          RC_VERSION=$(./mvnw help:evaluate -D'expression=core.artifact.release' -q -D'forceStdout' | sed 's/.* //')
           RC_NUMBER=$(echo "$RC_VERSION" | grep -o -E '[0-9]+')
           NEW_RC_NUMBER=$((1 + $RC_NUMBER)) 
           echo "DEV_VERSION=$CORE_VERSION-r$NEW_RC_NUMBER-SNAPSHOT" >> $GITHUB_OUTPUT
@@ -59,7 +59,7 @@ jobs:
         id: new_release_property
         shell: bash
         run: |
-           echo "VERSION=$(mvn help:evaluate -D'expression=project.version' -q -D'forceStdout')"
+           echo "VERSION=$(./mvnw help:evaluate -D'expression=project.version' -q -D'forceStdout' | sed 's/.* //')"
            IFS='-'
            read -ra arr <<< "$VERSION"
            for val in "${arr[@]}"
