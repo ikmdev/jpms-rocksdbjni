@@ -73,7 +73,7 @@ jobs:
 
       - name: Update Release Candidate Property
         run: |
-          mvn versions:set-property \
+          ./mvnw versions:set-property \
             -Dproperty=core.artifact.release \
             -DnewVersion=$RELEASE_PROPERTY
              git config user.name "ikmdevops"
