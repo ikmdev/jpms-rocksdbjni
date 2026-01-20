@@ -1,4 +1,4 @@
-name: JPMS-Deps Release Workflow
+name: Release JPMS Workflow
 
 run-name: "Releasing ${{ github.event.repository.name }} #${{github.run_number}}"
 
