@@ -1,4 +1,4 @@
-name: SemVer Release Workflow
+name: JPMS-Deps Release Workflow
 
 run-name: "Releasing ${{ github.event.repository.name }} #${{github.run_number}}"
 
