@@ -19,7 +19,7 @@
     <properties>
         <!-- change release here-->
         <core.artifact.version>10.4.2</core.artifact.version>
-        <core.artifact.release>r2</core.artifact.release>
+        <core.artifact.release></core.artifact.release>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>25</maven.compiler.release>
