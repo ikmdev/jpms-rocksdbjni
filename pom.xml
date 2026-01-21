@@ -10,7 +10,7 @@
 
     <groupId>dev.ikm.jpms</groupId>
     <artifactId>rocksdbjni</artifactId>
-    <version>10.4.2-r2-SNAPSHOT</version>
+    <version>10.4.2-r2</version>
     <packaging>jar</packaging>
 
     <name>jpms-rocksdbjni</name>
