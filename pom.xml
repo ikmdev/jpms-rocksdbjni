@@ -139,7 +139,7 @@
                                 <artifactItem>
                                     <groupId>org.rocksdb</groupId>
                                     <artifactId>rocksdbjni</artifactId>
-                                    <version>10.4.2</version>
+                                    <version>${core.artifact.version}</version>
                                     <classifier>javadoc</classifier>
                                 </artifactItem>
                             </artifactItems>
@@ -264,15 +264,15 @@ versions where the JAR included all platform-specific natives in one fil
                         <configuration>
                             <target>
                                 <move file="${project.build.directory}/dependency/rocksdbjni-${core.artifact.version}-javadoc.jar"
-                                      tofile="${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-javadoc.jar"/>
+                                      tofile="${project.build.directory}/rocksdbjni-${project.version}-javadoc.jar"/>
                                 <move file="${project.build.directory}/dependency/rocksdbjni-${core.artifact.version}-sources.jar"
-                                      tofile="${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-sources.jar"/>
+                                      tofile="${project.build.directory}/rocksdbjni-${project.version}-sources.jar"/>
                                 <move file="${project.build.directory}/modules/rocksdbjni-${core.artifact.version}-linux64.jar"
-                                      tofile="${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-linux64.jar"/>
+                                      tofile="${project.build.directory}/rocksdbjni-${project.version}-linux64.jar"/>
                                 <move file="${project.build.directory}/modules/rocksdbjni-${core.artifact.version}-osx.jar"
-                                      tofile="${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-osx.jar"/>
+                                      tofile="${project.build.directory}/rocksdbjni-${project.version}-osx.jar"/>
                                 <move file="${project.build.directory}/modules/rocksdbjni-${core.artifact.version}-win64.jar"
-                                      tofile="${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-win64.jar"/>
+                                      tofile="${project.build.directory}/rocksdbjni-${project.version}-win64.jar"/>
                             </target>
                         </configuration>
                         <goals>
@@ -294,27 +294,27 @@ versions where the JAR included all platform-specific natives in one fil
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-osx.jar</file>
+                                    <file>${project.build.directory}/rocksdbjni-${project.version}-osx.jar</file>
                                     <type>jar</type>
                                     <classifier>osx</classifier>
                                 </artifact>
                                 <artifact>
-                                    <file>${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-linux64.jar</file>
+                                    <file>${project.build.directory}/rocksdbjni-${project.version}-linux64.jar</file>
                                     <type>jar</type>
                                     <classifier>linux64</classifier>
                                 </artifact>
                                 <artifact>
-                                    <file>${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-win64.jar</file>
+                                    <file>${project.build.directory}/rocksdbjni-${project.version}-win64.jar</file>
                                     <type>jar</type>
                                     <classifier>win64</classifier>
                                 </artifact>
                                 <artifact>
-                                    <file>${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-sources.jar</file>
+                                    <file>${project.build.directory}/rocksdbjni-${project.version}-sources.jar</file>
                                     <type>jar</type>
                                     <classifier>sources</classifier>
                                 </artifact>
                                 <artifact>
-                                    <file>${project.build.directory}/rocksdbjni-${core.artifact.version}-r1-SNAPSHOT-javadoc.jar</file>
+                                    <file>${project.build.directory}/rocksdbjni-${project.version}-javadoc.jar</file>
                                     <type>jar</type>
                                     <classifier>javadoc</classifier>
                                 </artifact>
